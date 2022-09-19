@@ -1,12 +1,13 @@
 import React from 'react';
 import { screen, act } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 import renderWithRouter from '../renderWithRouter';
 import App from '../App';
 
 describe('Teste o componente <App.js />:', () => {
-  test('A aplicação contém um conjunto fixo de links de navegação "Home, About e Favorite Pokémons" :', () => {
+  test(`A aplicação contém um conjunto fixo de links de
+  navegação "Home, About e Favorite Pokémons" :`, () => {
     renderWithRouter(<App />);
     const linkHome = screen.getByRole('link', { name: /Home/i });
     const linkAbout = screen.getByRole('link', { name: /About/i });
@@ -17,7 +18,8 @@ describe('Teste o componente <App.js />:', () => {
     expect(linkFavoritePokemon).toBeInTheDocument();
   });
 
-  test('A aplicação é redirecionada para a página inicial, na URL / ao clicar no link Home da barra de navegação', () => {
+  test(`A aplicação é redirecionada para a página inicial,
+  na URL / ao clicar no link Home da barra de navegação`, () => {
     const { history } = renderWithRouter(<App />);
     const linkHome = screen.getByRole('link', { name: /Home/i });
     expect(linkHome).toBeInTheDocument();
@@ -30,7 +32,8 @@ describe('Teste o componente <App.js />:', () => {
     expect(homeTitle).toBeInTheDocument();
   });
 
-  test('A aplicação é redirecionada para a página de About, na URL /about, ao clicar no link About da barra de navegação', () => {
+  test(`A aplicação é redirecionada para a página de About,
+  na URL /about, ao clicar no link About da barra de navegação`, () => {
     const { history } = renderWithRouter(<App />);
     const linkAbout = screen.getByRole('link', { name: /About/i });
     expect(linkAbout).toBeInTheDocument();
@@ -44,7 +47,9 @@ describe('Teste o componente <App.js />:', () => {
     expect(aboutTitle).toBeInTheDocument();
   });
 
-  test('A aplicação é redirecionada para a página de Pokémons Favoritados, na URL /favorites, ao clicar no link Favorite Pokémons da barra de navegação;', () => {
+  test(`A aplicação é redirecionada para a página de Pokémons Favoritados,
+  na URL /favorites, ao clicar no link
+  Favorite Pokémons da barra de navegação;`, () => {
     const { history } = renderWithRouter(<App />);
     const linkFavorite = screen.getByRole('link', { name: /Favorite Pokémons/i });
     expect(linkFavorite).toBeInTheDocument();
