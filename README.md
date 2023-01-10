@@ -1,4 +1,4 @@
-# Projeto FrontEnd Online Store
+# Projeto Testes em React
 
 Projeto realizado durante módulo de Front-end do curso de desenvolvimento web da Trybe.
 
